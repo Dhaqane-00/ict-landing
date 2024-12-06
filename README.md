@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Enterprise Landing Page
 
-## Getting Started
+A modern, high-performance landing page built with Next.js 14, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+![Project Banner](public/images/readme-banner.png)
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15.0.3 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with CSS Variables
+- **Animations**: AOS (Animate on Scroll)
+- **Build Tool**: Turbopack (see package.json)
+- **Font System**: Local Geist fonts with variable weights
+
+## 🏗️ Project Structure
+
+```
+├── app/
+│   ├── (auth)/           # Authentication routes
+│   ├── (default)/        # Main application routes
+│   ├── layout.tsx        # Root layout with font configuration
+│   └── globals.css       # Global styles and CSS variables
+├── components/
+│   ├── ui/              # Reusable UI components
+│   └── ...              # Feature-specific components
+├── lib/
+│   └── utils.ts         # Utility functions
+└── public/
+    └── images/          # Static assets
+```
+
+## 🔑 Key Features
+
+- **Modern Authentication Flow**: Complete auth pages (Sign In, Sign Up, Reset Password)
+- **Responsive Design**: Mobile-first approach with fluid layouts
+- **Dark Mode Support**: Built-in dark mode with CSS variables
+- **Performance Optimized**:
+  - Local font optimization
+  - Image optimization with next/image
+  - Turbopack for faster builds
+
+## 🛠️ Development Setup
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Styling Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project uses a sophisticated CSS variable system for theming. Core design tokens are defined in:
 
-## Learn More
+```css:app/globals.css
+startLine: 9
+endLine: 63
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔒 Authentication Layouts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The auth layout provides a consistent structure for all authentication pages with:
+- Branded header
+- Responsive form layouts
+- Background illustrations
+- Gradient effects
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+See implementation:
 
-## Deploy on Vercel
+```typescript:app/(auth)/layout.tsx
+startLine: 6
+endLine: 68
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Component Architecture
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Components follow a modular pattern with clear separation of concerns. Example of a complex component with animations and responsive design:
+
+```typescript:components/hero-home.tsx
+startLine: 15
+endLine: 81
+```
+
+## ⚙️ Configuration
+
+### TypeScript
+
+Strict mode enabled with custom path aliases. See:
+
+```json:tsconfig.json
+startLine: 2
+endLine: 24
+```
+
+### Tailwind
+
+Extended configuration with custom colors and animations:
+
+```typescript:tailwind.config.ts
+startLine: 3
+endLine: 62
+```
+
+## 🔄 State Management
+
+- Local state management using React hooks
+- AOS for scroll-based animations
+- Component-level state for UI interactions
+
+## 📱 Responsive Design
+
+The application uses Tailwind's responsive classes with custom breakpoints:
+- Mobile: Default
+- Tablet: sm (640px)
+- Desktop: lg (1024px)
+- Wide: xl (1280px)
+
+## 🚀 Deployment
+
+The project is optimized for Vercel deployment with:
+- Automatic preview deployments
+- Edge-optimized static assets
+- API route support
+
+## 🧪 Best Practices
+
+- TypeScript strict mode enabled
+- ESLint configuration for code quality
+- Proper image optimization
+- SEO-friendly meta tags
+- Accessible UI components
+
+## 📝 Notes for Developers
+
+- Use the `cn()` utility for conditional classes
+- Follow the existing component patterns
+- Maintain CSS variable naming conventions
+- Keep components modular and reusable
+- Utilize TypeScript strict mode
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.

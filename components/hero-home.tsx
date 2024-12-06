@@ -7,6 +7,10 @@ import Avatar04 from "@/public/images/avatar-04.jpg";
 import Avatar05 from "@/public/images/avatar-05.jpg";
 import Avatar06 from "@/public/images/avatar-06.jpg";
 import { Button } from "./ui/button";
+import { FlipWords } from "./ui/flip-words";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
+
+const Text = 'Expert Web and Mobile Development Solutions';
 
 export default function HeroHome() {
   return (
@@ -21,10 +25,18 @@ export default function HeroHome() {
             <h1
               className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1] md:text-6xl"
               data-aos="zoom-y-out"
-              data-aos-delay={150}
-            >
-              Expert Web and Mobile Development Solutions <br className="max-lg:hidden" />
-              Tailored to Your Needs
+              data-aos-delay={150}>
+                
+              Expert Web and Mobile Development Solutions
+              <br className="max-lg:hidden" />
+              <FlipWords
+                words={[
+                  "Tailored to Your Needs",
+                  "Built with Excellence",
+                  "Designed for Success",
+                ]}
+                className="inline-block"
+              />
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -45,7 +57,7 @@ export default function HeroHome() {
                     className="btn group mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
                     href="#0"
                   >
-                    <Button color="red"className="relative inline-flex items-center">
+                    <Button color="red" className="relative inline-flex items-center">
                     Get Started Today{" "}
                       <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
                         -&gt;
@@ -53,7 +65,7 @@ export default function HeroHome() {
                     </Button>
                   </a>
                   <a
-                    className="btn w-full bg-white text-gray-800 shadow hover:bg-gray-100 sm:ml-4 sm:w-auto"
+                    className="btn w-full bg-white text-gray-800 shadow hover:bg-gray-100 sm:ml-4 sm:w-auto rounded-sm pt-1 px-2"
                     href="#0"
                   >
                     Learn More
