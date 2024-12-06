@@ -1,6 +1,6 @@
 # Next.js Enterprise Landing Page
 
-A modern, high-performance landing page built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern, high-performance landing page built with Next.js 15.0.3, TypeScript, and Tailwind CSS.
 
 ![Project Banner](public/images/readme-banner.png)
 
