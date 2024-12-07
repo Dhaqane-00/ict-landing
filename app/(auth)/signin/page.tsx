@@ -4,8 +4,30 @@ export const metadata = {
 };
 
 import Link from "next/link";
+import * as yup from 'yup';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+// Add validation schema
+const schema = yup.object({
+  email: yup.string().email('Invalid email').required('Email is required'),
+  password: yup.string().required('Password is required'),
+}).required();
+
+// Add type for form data
+type FormData = yup.InferType<typeof schema>;
 
 export default function SignIn() {
+  // Initialize react-hook-form with yup resolver
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    // Handle form submission
+  };
+
   return (
     <>
       <>
@@ -13,7 +35,7 @@ export default function SignIn() {
           <h1 className="text-4xl font-bold">Sign in to your account</h1>
         </div>
         {/* Form */}
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-4">
             <div>
               <label
@@ -23,12 +45,14 @@ export default function SignIn() {
                 Email
               </label>
               <input
-                id="email"
-                className="form-input w-full py-2"
+                {...register('email')}
+                className={`form-input w-full py-2 ${errors.email ? 'border-red-500' : ''}`}
                 type="email"
                 placeholder="corybarker@email.com"
-                required
               />
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+              )}
             </div>
             <div>
               <label
@@ -38,13 +62,15 @@ export default function SignIn() {
                 Password
               </label>
               <input
-                id="password"
-                className="form-input w-full py-2"
+                {...register('password')}
+                className={`form-input w-full py-2 ${errors.password ? 'border-red-500' : ''}`}
                 type="password"
                 autoComplete="on"
                 placeholder="••••••••"
-                required
               />
+              {errors.password && (
+                <p className="mt-1 text-sm text-red-500">{errors.password.message}</p>
+              )}
             </div>
           </div>
           <div className="mt-6">
