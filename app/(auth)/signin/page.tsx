@@ -7,6 +7,7 @@ import Link from "next/link";
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast } from 'react-hot-toast';
 
 // Add validation schema
 const schema = yup.object({
@@ -23,9 +24,13 @@ export default function SignIn() {
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    // Handle form submission
+  const onSubmit = async (data: FormData) => {
+    try {
+      // Your sign-in logic here
+      toast.success('Successfully signed in!');
+    } catch (error) {
+      toast.error('Failed to sign in. Please try again.');
+    }
   };
 
   return (
