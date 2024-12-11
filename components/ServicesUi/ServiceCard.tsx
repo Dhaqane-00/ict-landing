@@ -24,7 +24,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <FollowerPointerCard
       title={title.join(" ")}
-      className=" text-black to-black"
+      className="text-black"
 
     >
       <section
