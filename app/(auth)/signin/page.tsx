@@ -1,13 +1,10 @@
-export const metadata = {
-  title: "Sign In - Simple",
-  description: "Page description",
-};
+'use client';
 
 import Link from "next/link";
 import * as yup from 'yup';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-hot-toast';
+import { useForm } from "react-hook-form";
 
 // Add validation schema
 const schema = yup.object({
