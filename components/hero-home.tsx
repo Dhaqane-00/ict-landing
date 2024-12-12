@@ -31,9 +31,9 @@ export default function HeroHome() {
               <br className="max-lg:hidden" />
               <FlipWords
                 words={[
-                  "Tailored to Your Needs",
-                  "Built with Excellence",
-                  "Designed for Success",
+                  "Solutions Tailored to You",
+                  "Solutions Built with Excellence",
+                  "Solutions Designed for Success",
                 ]}
                 className="inline-block"
               />

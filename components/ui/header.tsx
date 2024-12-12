@@ -38,7 +38,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signin"
-                className="btn-sm bg-white text-gray-800 shadow hover:bg-gray-50"
+                className="btn-sm bg-white text-gray-800 shadow hover:bg-gray-50 px-2 py-2 rounded-sm"
               >
                 Login
               </Link>
@@ -46,7 +46,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signup"
-                className="btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900"
+                className="btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900 px-2 py-2 rounded-sm"
               >
                 Register
               </Link>
