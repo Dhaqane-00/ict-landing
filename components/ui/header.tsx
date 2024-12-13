@@ -46,7 +46,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signup"
-                className="btn-sm bg-gray-800 text-gray-200 shadow hover:bg-gray-900 px-2 py-2 rounded-sm"
+                className="btn-sm bg-blue-800 text-gray-200 shadow hover:bg-gray-900 px-2 py-2 rounded-sm ring-2 ring-black"
               >
                 Register
               </Link>
