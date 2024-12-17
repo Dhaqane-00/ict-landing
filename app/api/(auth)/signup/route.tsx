@@ -5,7 +5,7 @@ import User from '@/models/user';
 
 export async function POST(req: Request) {
   try {
-    const { email, password, name } = await req.json();
+    const { name, email, password } = await req.json();
 
     // Validate input
     if (!email || !password || !name) {
@@ -32,13 +32,13 @@ export async function POST(req: Request) {
 
     // Create new user
     const user = await User.create({
-      email,
-      password: hashedPassword,
-      name,
+    name,
+    email,
+    password: hashedPassword,
     });
 
     return NextResponse.json(
-      { message: 'User created successfully', userId: user._id },
+      { message: 'User created successfully', user },
       { status: 201 }
     );
 
