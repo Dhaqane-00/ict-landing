@@ -9,6 +9,7 @@ import BusinessCategories from "@/components/business-categories";
 import FeaturesPlanet from "@/components/features-planet";
 import LargeTestimonial from "@/components/large-testimonial";
 import Cta from "@/components/cta";
+import Pricing from "@/components/Pricing";
 
 
 export default function Home() {
@@ -21,9 +22,9 @@ export default function Home() {
       <ServiceGrid />
       <BusinessCategories />
       <FeaturesPlanet />
+      <Pricing />
       <LargeTestimonial />
       <Cta />
-      
     </>
   );
 }
